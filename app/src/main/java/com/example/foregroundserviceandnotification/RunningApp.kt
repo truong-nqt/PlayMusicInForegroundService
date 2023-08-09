@@ -5,7 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 
-class MyApplication: Application() {
+class RunningApp: Application() {
 
     companion object {
         const val CHANEL_ID = "ID_SERVICE"
@@ -13,7 +13,6 @@ class MyApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         createChannelNotification()
     }
 
@@ -22,7 +21,6 @@ class MyApplication: Application() {
             val notificationChannel = NotificationChannel(CHANEL_ID, "NOTIFICATION",
                 NotificationManager.IMPORTANCE_DEFAULT)
             notificationChannel.setSound(null, null)
-
             val manager = getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(notificationChannel)
         }
